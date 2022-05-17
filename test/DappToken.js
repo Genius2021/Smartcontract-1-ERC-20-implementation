@@ -1,25 +1,6 @@
 let DappToken = artifacts.require("DappToken");
 
-// contract (DappToken , accounts =>{
-//     let tokenInstance;
-
-//     it("Sets the total supply upon deployment", ()=>{
-//         return DappToken.deployed().then(function(instance){
-//             tokenInstance = instance;
-//             return tokenInstance.totalSupply();
-//         }).then(totalSupply =>{
-//             assert.equal(totalSupply.toNumber(), 1000000, "Sets the total supply to 1,000,000")
-//             return tokenInstance.balanceOf(accounts[0]);
-//         }
-// ).then(adminBalance =>{
-//     assert.equal(adminBalance.toNumber(), 1000000, "It allocates the initial supply of token to the admin")
-// })
-
-// }
-
-// )})
-
-contract (DappToken , accounts =>{
+contract(DappToken , accounts =>{
     let tokenInstance;
 
     it("Initializes the contract with the correct values", function(){
@@ -30,7 +11,7 @@ contract (DappToken , accounts =>{
             assert.equal(name, "Dapp Token", "has the correct name");
             return tokenInstance.symbol();
         }).then(function(symbol){
-            assert.equal(symbol, "DT", "has th correct symbol");
+            assert.equal(symbol, "DT", "has the correct symbol");
             return tokenInstance.standard();
         }).then(function(standard){
             assert.equal(standard, "Dapp Token v1.0", "has the correct standard")

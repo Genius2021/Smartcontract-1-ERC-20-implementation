@@ -13,8 +13,8 @@ contract DappToken {
         uint256 _value
     );
 
-    //approve
-    event Approval(
+    //approve event
+    event Approval (
         address indexed _owner, 
         address indexed _spender, 
         uint256 _value
@@ -53,7 +53,6 @@ contract DappToken {
 
     //Delegated Transfer
     function transferFrom(address _from, address _to, uint256 _value)public returns(bool success){
-        
         
         //require _from has enough tokens
         require(_value <= balanceOf[_from]);
